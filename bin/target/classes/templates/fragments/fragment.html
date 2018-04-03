@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="headFragment(title)">
+		<title th:text="${title}">Fragment</title>
+		<link href="/css/jquery.dataTables.min.css" rel="stylesheet" />	
+</head>
+
+<body>
+	<!-- <div th:fragment="header">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/student/viewall">Daftar Mahasiswa</a></li>
+			<li> <a href="/student/add">Menambah Mahasiswa</a></li>
+		</ul>
+	</div> -->
+	
+	<div th:fragment="footer">
+		<hr/>
+		<h4>Mata Kuliah APAP</h4>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <title>Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div th:replace="fragments/fragment :: header"></div> 
+	<h2>Persentase Kelulusan</h2>
+	<table width="700px">
+		<tr>
+			<td> Tahun </td>
+			<td th:text="${tahun_masuk}"> </td>
+			<td th:text="${persentasi}+'%'" rowspan="2"><h3> 95 %</h3></td>	
+		</tr>
+		<tr>
+			<td> Program Studi </td>
+			<td th:text="${prodi}"> Akuntansi </td>
+		</tr>
+		<tr>
+			<td> Fakultas </td>
+			<td th:text="${fakultas}"> Fakultas Ekonomi dan Bisnis </td>
+			<td th:text="${jlhLulus}+' dari '+${jlhAll}+' Mahasiswa telah lulus'"> 95 dari 100 Mahasiswa telah lulus</td>
+		</tr>
+		<tr>
+			<td> Universitas </td>
+			<td th:text="${universitas}"> Universitas Indonesia </td>
+		</tr>
+	</table>
+</body>
+</html>

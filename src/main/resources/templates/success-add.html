@@ -3,6 +3,8 @@
 		<title>Add</title>
 	</head>
 	<body>
-		<h2>Data berhasil ditambahkan</h2>
+		<div th:replace="fragments/fragment :: header"></div> 
+		<h2>Sukses</h2>
+		<p th:text="'Mahasiswa dengan NPM '+ ${student.npm} + ' berhasil ditambahkan'"></p>
 	</body>
 </html>

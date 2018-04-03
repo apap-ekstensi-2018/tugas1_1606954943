@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <title>Index</title>
+</head>
+<body>
+	<div th:replace="fragments/fragment :: header"></div> 
+	<h2>Persentase Kelulusan</h2>
+	<h3>Lihat Data Mahasiswa Berdasarkan NPM</h3>
+	<p>Masukkan Nomor Pokok Mahasiswa</p>
+	<form action="/kelulusan/submit" method="get">
+		<div>
+			<label for="tahun_masuk"><b>Tahun</b></label> 
+			<div>
+				<input type="text" name="tahun_masuk" required="required" />
+			</div>
+		</div>
+		<div>
+			<label for="id_prodi"><b>Id Program Studi</b></label> 
+			<div>
+				<input type="text" name="id_prodi" required="required" />
+			</div> 
+		</div>
+		<div>
+			<button type="submit" name="action" value="save">Lihat</button>
+		</div>
+	</form>
+</body>
+</html>

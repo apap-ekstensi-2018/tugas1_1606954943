@@ -1,0 +1,77 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Detail Mahasiswa</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	<script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div th:replace="fragments/fragment :: header"></div> 
+	<h3 th:text="'Lihat Data Mahasiswa - ' + ${student.npm}"></h3>
+	<table id="tblStudent">
+		<thead>
+			<tr>
+				<th width="20%">NIK</th>
+				<td th:text="${student.npm}"></td>
+			</tr>
+			<tr>
+				<th>Nama</th>
+				<td th:text="${student.nama}"></td>
+			</tr>
+			<tr>
+				<th>Tempat/Tanggal Lahir</th>
+				<td
+					th:text="${student.tempat_lahir} + ' ' + ${student.tanggal_lahir}">
+				</td>
+			</tr>
+			<tr>
+				<th>Program Studi</th>
+				<td
+					th:text="${student.prodi.nama_prodi}">
+				</td>
+			</tr>
+			<tr>
+				<th>Fakultas</th>
+				<td
+					th:text="${student.prodi.fakultas.nama_fakultas}">
+				</td>
+			</tr>
+			<tr>
+				<th>Universitas</th>
+				<td
+					th:text="${student.prodi.fakultas.univ.nama_univ}">
+				</td>
+			</tr>
+			<tr>
+				<th>Jenis Kelamin</th>
+				<td th:text="${student.jenis_kelamin}"></td>
+			</tr>
+			<tr>
+				<th>Agama</th>
+				<td th:text="${student.agama}"></td>
+			</tr>
+			<tr>
+				<th>Golongan Darah</th>
+				<td th:text="${student.golongan_darah}"></td>
+			</tr>
+			<tr>
+				<th>Tahun Masuk</th>
+				<td th:text="${student.tahun_masuk}"></td>
+			</tr>
+			<tr>
+				<th>Jalur Masuk</th>
+				<td th:text="${student.jalur_masuk}"></td>
+			</tr>
+			<tr>
+				<th>Status</th>
+				<td th:text="${student.status}"></td>
+				<td>
+					<button class="btn-success">Lulus</button>
+					<button class="btn-danger">Non-Aktifkan</button>
+				</td>
+			</tr>
+		</thead>
+	</table>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <title>Index</title>
+</head>
+<body>
+	<div th:replace="fragments/fragment :: header"></div>  
+	<h3>Cari Mahasiswa</h3>
+	<form action="/mahasiswa/cari/submit" method="get" th:object="${universitas}" th:value="${universitas}">
+		<p><b>Universitas</b></p>
+		<select id="universitas" name="universitas" th:value="${universitas}" th:field="${universitas}">
+			<div th:each="universitas,iterationStatus: ${universitas}" th:class="${iterationStatus.odd} ? 'odd'">
+				<option id="kode_univ" name="kode_univ" th:text="${universitas.nama_univ}" th:value="${universitas.kode_univ}"></option>
+			</div>
+		</select>
+		<div>
+			<button> Cari </button>
+		</div>
+	</form>
+	
+	<!--  <div th:replace="fragments/fragment :: footer"></div> -->
+</body>
+</html>

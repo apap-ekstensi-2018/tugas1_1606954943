@@ -1,8 +1,23 @@
-<html>
-	<head>
-		<title>Index</title>
-	</head>
-	<body>
-		<h2>Welcome To Tutorial 4 APAP</h2>
-	</body>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <title>Index</title>
+</head>
+<body>
+	<div th:replace="fragments/fragment :: header"></div> 
+	<h2>Sistem Informasi Kemahasiswaan</h2>
+	<p>Selamat datang di Sistem Informasi Kemahasiswaan </p>
+	<hr> </hr>
+	<h3>Lihat Data Mahasiswa Berdasarkan NPM</h3>
+	<p>Masukkan Nomor Pokok Mahasiswa</p>
+	<form action="/mahasiswa" method="get">
+		<input type="text" name="npm" th:value="${npm}" required="required" /> 
+		<div>
+			<button> Lihat </button>
+		</div>
+	</form>
+	
+	<!--  <div th:replace="fragments/fragment :: footer"></div> -->
+</body>
 </html>

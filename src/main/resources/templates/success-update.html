@@ -1,8 +1,11 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<title>Update</title>
 	</head>
 	<body>
-		<h2>Data berhasil diupdate</h2>
+		<div th:replace="fragments/fragment :: header"></div> 
+		<h2>Sukses</h2>
+		<p th:text="'Mahasiswa dengan NPM '+ ${student.npm} + ' berhasil diubah'"></p>
 	</body>
 </html>

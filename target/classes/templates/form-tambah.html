@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Add student</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div th:replace="fragments/fragment :: header"></div> 
+	<h1 class="page-header">Tambah Mahasiswa</h1>
+
+	<form action="/mahasiswa/tambah/submit" method="post">
+		<div>
+			<label for="nama">Nama Lengkap</label> <input type="text" name="nama" required="required" />
+		</div>
+		<div>
+			<label for="tempat_lahir">Tempat Lahir</label> <input type="text" name="tempat_lahir" required="required" />
+		</div>
+		<div>
+			<label for="tanggal_lahir">Tanggal Lahir</label> <input type="text" name="tanggal_lahir" required="required" />
+		</div>
+		<div>
+			<label for="jenis_kelamin">Jenis Kelamin</label> 
+			<select id="jenis_kelamin" name="jenis_kelamin">
+				<option value="0"> Laki-Laki </option>
+				<option value="1"> Perempuan </option>
+			</select>
+		</div>
+		<div>
+			<label for="agama">Agama</label>
+				<select id="agama" name="agama">
+					<option value="Protestan"> Protestan </option>
+					<option value="Katolik"> Katolik </option>
+					<option value="Budha"> Budha </option>
+					<option value="Konghucu"> Konghucu </option>	
+					<option value="Hindu"> Hindu </option>
+					<option value="Islam"> Islam </option>	
+				</select>
+		</div>
+		<div>
+			<label for="gol_darah">Golongan Darah</label> 
+			<select id="gol_darah" name="gol_darah">
+				<option value="AB-"> AB- </option>
+				<option value="A-"> A- </option>
+				<option value="B-"> B- </option>
+				<option value="O+"> O+ </option>	
+				<option value="B+"> B+ </option>
+				<option value="O-"> O- </option>
+				<option value="A+"> A+ </option>
+				<option value="AB+"> AB+ </option>	
+			</select>
+		</div>
+		<div>
+			<label for="tahun_masuk">Tahun Masuk</label> <input type="text" name="tahun_masuk" required="required"/>
+		</div>
+		<div>
+			<label for="jalur_masuk">Jalur Masuk</label>
+			<select id="jalur_masuk" name="jalur_masuk">
+				<option value="Undangan Reguler/SNMPTN"> Undangan Reguler/SNMPTN </option>
+				<option value="Ujian Tulis Mandiri"> Ujian Tulis Mandiri </option>
+				<option value="Undangan Paralel/PPKB"> Undangan Paralel/PPKB </option>
+				<option value="Ujian Tulis Bersama/SBMPTN">Ujian Tulis Bersama/SBMPTN </option>	
+				<option value="Undangan Olimpiade"> Undangan Olimpiade </option>	
+			</select>
+		</div>
+		<div>
+			<label for="id_prodi">Id Program Studi</label> <input type="text" name="id_prodi" required="required"/>
+		</div>
+		<div>
+			<button type="submit" name="action" value="save">Save</button>
+		</div>
+	</form>
+
+</body>
+
+</html>
+
