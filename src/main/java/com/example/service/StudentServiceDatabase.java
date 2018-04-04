@@ -91,6 +91,13 @@ public class StudentServiceDatabase implements StudentService
     	studentMapper.updateMahasiswa(student);
     }
     
+    @Override
+    public void updateNPMMahasiswa(String npm, String new_npm) {
+    	log.info ("student " + npm + " updated");
+    	studentMapper.updateNPMMahasiswa(npm, new_npm);
+    }
+    
+    
     public String selectAktifMahasiswa (String tahun_masuk, String id_prodi)
     {
         log.info ("select student with tahun_masuk {}", tahun_masuk);

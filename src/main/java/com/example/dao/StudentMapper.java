@@ -36,6 +36,9 @@ public interface StudentMapper
     @Update("UPDATE mahasiswa SET nama = #{nama}, tempat_lahir = #{tempat_lahir}, tanggal_lahir = #{tanggal_lahir}, jenis_kelamin = #{jenis_kelamin}, agama = #{agama}, golongan_darah = #{golongan_darah}, tahun_masuk = #{tahun_masuk}, jalur_masuk = #{jalur_masuk}, id_prodi = #{id_prodi} where npm = #{npm}")
     void updateMahasiswa(StudentModel student); 
     
+    @Update("UPDATE mahasiswa SET npm = #{new_npm} where npm = #{npm}")
+    void updateNPMMahasiswa(@Param("npm") String npm, @Param("new_npm") String new_npm); 
+    
     @Select("SELECT COUNT(*) as count from mahasiswa where tahun_masuk = #{tahun_masuk} and id_prodi = #{id_prodi} and status = 'Lulus'")
     String selectAktifMahasiswa(@Param("tahun_masuk") String tahun_masuk, @Param("id_prodi") String id_prodi);
     

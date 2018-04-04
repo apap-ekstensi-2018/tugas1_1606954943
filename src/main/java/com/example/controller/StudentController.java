@@ -124,7 +124,28 @@ public class StudentController {
 	@RequestMapping(value = "/mahasiswa/ubah/submit", method = RequestMethod.POST)
 	public String updateMahasiswaSubmit(@ModelAttribute StudentModel student, Model model)
 	{
+		String npm_fix, order;
+		String thnMasuk = student.getTahun_masuk().substring(2);
+		StudentModel student_ = studentDAO.selectMahasiswaByProdi(student.getId_prodi());
+		String kodeUniv = student_.getProdi().getFakultas().getUniv().getKode_univ() + "";
+		String kodeProdi = student_.getProdi().getKode_prodi();
+		String kode_jalur = getJalurMahasiswa(student.getJalur_masuk());
+		String npm = '%' + thnMasuk + kodeUniv + kodeProdi + kode_jalur + '%';
+		StudentModel student_n = studentDAO.selectMahasiswaByNpm(npm);
+		if (student_n == null) {
+			order = "001";
+		} else {
+			String id = student_n.getNpm();
+			String no_input = id.substring(9);
+			int temp_order = Integer.parseInt(no_input);
+			temp_order = temp_order + 1;
+			order = temp_order + "";
+		}
+		npm_fix = thnMasuk + kodeUniv + kodeProdi + kode_jalur + order;
+		String new_npm = npm_fix;
+		System.out.println("npm_fix = " + npm_fix);
 		studentDAO.updateMahasiswa(student);
+		studentDAO.updateNPMMahasiswa(student.getNpm(), new_npm);
 		model.addAttribute("student", student);
 		return "success-update";
 	}

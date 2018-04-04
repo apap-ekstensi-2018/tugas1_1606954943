@@ -33,6 +33,8 @@ public interface StudentService
     
     void updateMahasiswa (StudentModel student);
     
+    void updateNPMMahasiswa (String npm, String new_npm);
+    
     String selectAktifMahasiswa(String tahun_masuk, String id_prodi);
     
     String selectAktifAllMahasiswa(String tahun_masuk, String id_prodi);
